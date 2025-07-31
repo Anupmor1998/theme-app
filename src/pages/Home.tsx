@@ -47,7 +47,9 @@ const Home: React.FC = () => {
         distinctio eveniet placeat maiores vitae nam, reprehenderit magnam
         reiciendis, nihil atque iusto facere unde ex ipsum? Minima.
       </p>
-      {loading && <p className="mb-4">Loading products...</p>}
+      {loading && (
+        <p className="my-6 text-center text-2xl">Loading products...</p>
+      )}
       {error && <p className="mb-4 text-red-500">Error: {error}</p>}
 
       {!loading && !error && (
