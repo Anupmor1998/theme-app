@@ -1,6 +1,15 @@
+import { useTheme } from "../context/ThemeContext";
+
 const Card = ({ product }: { product: any }) => {
+  const { theme } = useTheme();
+  const extraClass =
+    theme === "theme3"
+      ? "transform hover:scale-105 transition-transform duration-300"
+      : "";
   return (
-    <div className="rounded shadow p-4 transition-all duration-300 bg-[var(--bg)] text-[var(--text)] font-[var(--font)]">
+    <div
+      className={`rounded shadow p-4 transition-all duration-300 bg-[var(--card-bg)] text-[var(--card-text)] font-(family-name:--font) ${extraClass}`}
+    >
       <img
         src={product.image}
         alt={product.title}

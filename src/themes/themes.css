@@ -2,9 +2,15 @@
 
 /* Theme 1 - Minimalist Light */
 .theme1 {
-  --bg: #ffffff;
-  --text: #000000;
+  --bg: #f9fafb;
+  --text: #111827;
   --font: "Helvetica", sans-serif;
+
+  --header-bg: #ffffff;
+  --header-text: #1f2937;
+
+  --card-bg: #ffffff;
+  --card-text: #111827;
 }
 
 /* Theme 2 - Dark Sidebar */
@@ -12,11 +18,27 @@
   --bg: #1a1a2e;
   --text: #ffffff;
   --font: "Georgia", serif;
+
+  --header-bg: #16213e;
+  --header-text: #ffffff;
+
+  --card-bg: #0f3460;
+  --card-text: #e0e0e0;
+
+  --sidebar-bg: #0d1a38;
+  --sidebar-text: #ffffff;
+  --sidebar-width: 240px;
 }
 
 /* Theme 3 - Colorful Grid */
 .theme3 {
-  --bg: #fef3c7;
+  --bg: #fff7ed;
   --text: #4b5563;
   --font: "Pacifico", cursive;
+
+  --header-bg: #fcd34d;
+  --header-text: #78350f;
+
+  --card-bg: #fde68a;
+  --card-text: #78350f;
 }

@@ -2,8 +2,18 @@
 @import "tailwindcss";
 
 html {
-  --bg: white;
-  --text: black;
-  --font: sans-serif;
   transition: all 0.5s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span {
+  color: var(--text);
+  font-family: var(--font);
 }

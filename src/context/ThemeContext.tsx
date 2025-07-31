@@ -16,17 +16,14 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") as Theme;
-    if (storedTheme) setThemeState(storedTheme);
+    if (storedTheme) setTheme(storedTheme);
   }, []);
-
-  useEffect(() => {
-    document.documentElement.className = "";
-    document.documentElement.classList.add(theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
 
   const setTheme = (theme: Theme) => {
     setThemeState(theme);
+    document.documentElement.className = "";
+    document.documentElement.classList.add(theme);
+    localStorage.setItem("theme", theme);
   };
 
   return (

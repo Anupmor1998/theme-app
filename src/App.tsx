@@ -1,20 +1,20 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import Layout from "./components/Layout";
 import { ThemeProvider } from "./context/ThemeContext";
 import About from "./pages/About";
 import Home from "./pages/Home";
+import "./themes/themes.css";
 
 function App() {
   return (
     <ThemeProvider>
       <Router>
-        <Header />
-        <div className="min-h-screen transition-all duration-300 bg-[var(--bg)] text-[var(--text)] font-[var(--font)]">
+        <Layout>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
           </Routes>
-        </div>
+        </Layout>
       </Router>
     </ThemeProvider>
   );
