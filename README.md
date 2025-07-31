@@ -3,6 +3,7 @@
 ### To run the app in localhost run the below command
 
 ```js
+npm install
 npm run dev
 ```
 
