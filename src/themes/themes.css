@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+/* Theme 1 - Minimalist Light */
+.theme1 {
+  --bg: #ffffff;
+  --text: #000000;
+  --font: "Helvetica", sans-serif;
+}
+
+/* Theme 2 - Dark Sidebar */
+.theme2 {
+  --bg: #1a1a2e;
+  --text: #ffffff;
+  --font: "Georgia", serif;
+}
+
+/* Theme 3 - Colorful Grid */
+.theme3 {
+  --bg: #fef3c7;
+  --text: #4b5563;
+  --font: "Pacifico", cursive;
+}

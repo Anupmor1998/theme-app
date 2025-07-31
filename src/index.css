@@ -1,0 +1,9 @@
+@import "./themes/themes.css";
+@import "tailwindcss";
+
+html {
+  --bg: white;
+  --text: black;
+  --font: sans-serif;
+  transition: all 0.5s ease;
+}
