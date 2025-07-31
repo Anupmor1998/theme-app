@@ -1,13 +1,34 @@
 import { useEffect, useState } from "react";
 import Card from "../components/Card";
 
-const Home = () => {
-  const [products, setProducts] = useState<[]>([]);
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+}
+
+const Home: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then(setProducts);
+      .then((res) => {
+        if (!res.ok) throw new Error(`API error: ${res.status}`);
+        return res.json();
+      })
+      .then((data: Product[]) => {
+        setProducts(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err?.message || "Failed to load products");
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -26,11 +47,18 @@ const Home = () => {
         distinctio eveniet placeat maiores vitae nam, reprehenderit magnam
         reiciendis, nihil atque iusto facere unde ex ipsum? Minima.
       </p>
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {products.map((product) => (
-          <Card key={product.id} product={product} />
-        ))}
-      </div>
+      {loading && <p className="mb-4">Loading products...</p>}
+      {error && <p className="mb-4 text-red-500">Error: {error}</p>}
+
+      {!loading && !error && (
+        <div className="w-full" style={{}}>
+          <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {products.map((product) => (
+              <Card key={product.id} product={product} />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
