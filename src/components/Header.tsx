@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import themeLogo from "../assets/theme.png";
 import { useTheme } from "../context/ThemeContext";
 
 const Header = ({ setSidebarOpen }) => {
@@ -15,7 +16,14 @@ const Header = ({ setSidebarOpen }) => {
           ☰
         </button>
       )}
-      <h1 className="text-xl font-bold">Multi-Theme App</h1>
+      <h1 className="text-xl font-bold flex items-center gap-2">
+        Hipster
+        <img
+          className="w-8 h-auto object-contain"
+          src={themeLogo}
+          alt="theme"
+        />
+      </h1>
 
       <div className="flex items-center gap-4">
         {theme !== "theme2" && (
